@@ -1,3 +1,5 @@
+Faker
 presidio_analyzer
 presidio_anonymizer
+python-dotenv
 spacy
