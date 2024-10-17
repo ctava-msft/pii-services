@@ -57,5 +57,13 @@ for document in documents:
             fake_email = fake.email()
             original_text = replace_text(original_text, entity['offset'], entity['length'], fake_email)
 
+
+# Using regex to find 3-digit CVV
+cvv_pattern = re.compile(r'\b(?!.*-)\d{3}\b') #re.compile(r'\b\d{3}\b')
+cvv_matches = cvv_pattern.finditer(original_text)
+for match in cvv_matches:
+    print(f"CVV match: {match.group()} at position {match.start()} to {match.end()}")
+    original_text = original_text[:match.start()] + '***' + original_text[match.end():]
+
 # Print the modified text
 print(original_text)
