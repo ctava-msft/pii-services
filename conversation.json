@@ -1,0 +1,38 @@
+{
+    "displayName": "Sample Conversation Analysis",
+    "analysisInput": {
+      "conversations": [
+        {
+          "id": "conversation1",
+          "conversationItems": [
+            {
+              "id": "1",
+              "participantId": "user1",
+              "text": "Hello, I need help with my account.",
+              "modality": "text",
+              "language": "en",
+              "participantRole": "Customer"
+            },
+            {
+              "id": "2",
+              "participantId": "agent1",
+              "text": "His name is Mr. Jones , charge this credit card: 5555 5555 5555 4444 cvv: 523 that expires on 08/29 and his phone number is 212-555-5555",
+              "modality": "text",
+              "language": "en",
+              "participantRole": "Agent"
+            }
+          ]
+        }
+      ]
+    },
+    "tasks": [
+      {
+        "taskName": "PII Detection",
+        "kind": "ConversationalPIITask",
+        "parameters": {
+          "modelVersion": "latest",
+          "piiCategories": ["All"]
+        }
+      }
+    ]
+  }
